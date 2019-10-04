@@ -20,12 +20,12 @@ class EmployeeList extends Component {
   }
 
   render() {
-    console.log("Employee LIST: Render");
+    console.log("EmployeeList: Render");
 
     return (
       <div className="container-cards">
-        {this.state.employees.map(employeeCardResult => (
-          <EmployeeCard />
+        {this.state.employees.map(employee => (
+          <EmployeeCard key={employee.id} employee={employee} />
         ))}
       </div>
     );

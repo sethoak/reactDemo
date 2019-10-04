@@ -21,25 +21,25 @@ class ApplicationViews extends Component {
         <Route
           path="/animals"
           render={props => {
-            return <AnimalList />;
+            return <AnimalList {...props} />;
           }}
         />
         <Route
           path="/locations"
           render={props => {
-            return <LocationList />;
+            return <LocationList {...props} />;
           }}
         />
         <Route
           path="/employees"
           render={props => {
-            return <EmployeeList />;
+            return <EmployeeList {...props} />;
           }}
         />
         <Route
           path="/owners"
           render={props => {
-            return <OwnerList />;
+            return <OwnerList {...props} />;
           }}
         />
       </React.Fragment>

@@ -5,18 +5,11 @@ class EmployeeCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <h3>
-            Owner: <span className="card-employeename">Krusty</span>
-          </h3>
-          <h3>
-            Manager: <span className="card-employeename">Nelson</span>
-          </h3>
-          <h3>
-            Co-manager: <span className="card-employeename">Fry</span>
-          </h3>
-          <h3>
-            Employee: <span className="card-employeename">Rusty</span>
-          </h3>
+          <h2>
+            Employee:{" "}
+            <span className="card-petname">{this.props.employee.name}</span>
+          </h2>
+          <p>Position: {this.props.employee.title}</p>
         </div>
       </div>
     );

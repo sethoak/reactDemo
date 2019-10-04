@@ -20,12 +20,12 @@ class LocationList extends Component {
   }
 
   render() {
-    console.log("Location LIST: Render");
+    console.log("LocationList: Render");
 
     return (
       <div className="container-cards">
-        {this.state.locations.map(kennelLocation => (
-          <LocationCard />
+        {this.state.locations.map(location => (
+          <LocationCard key={location.id} local={location} />
         ))}
       </div>
     );
