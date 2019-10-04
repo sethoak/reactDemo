@@ -5,7 +5,7 @@ import AnimalList from "./animal/AnimalList";
 //only include these once they are built - previous practice exercise
 import LocationList from "./location/LocationList";
 import EmployeeList from "./employee/EmployeeList";
-import OwnerCard from "./owner/OwnerCard";
+import OwnerList from "./owner/OwnerList";
 
 class ApplicationViews extends Component {
   render() {
@@ -39,7 +39,7 @@ class ApplicationViews extends Component {
         <Route
           path="/owners"
           render={props => {
-            return <OwnerCard />;
+            return <OwnerList />;
           }}
         />
       </React.Fragment>
