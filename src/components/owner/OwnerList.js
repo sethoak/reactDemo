@@ -20,12 +20,12 @@ class OwnerList extends Component {
   }
 
   render() {
-    console.log("Owner LIST: Render");
+    console.log("Owner: Render");
 
     return (
       <div className="container-cards">
-        {this.state.owners.map(ownlerListResults => (
-          <OwnerCard />
+        {this.state.owners.map(owner => (
+          <OwnerCard key={owner.id} owner={owner} />
         ))}
       </div>
     );
