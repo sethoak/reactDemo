@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./animal.css";
 
 class AnimalCard extends Component {
@@ -13,6 +14,10 @@ class AnimalCard extends Component {
             Name: <b>{this.props.animal.name}</b>
           </h3>
           <p>Breed: {this.props.animal.breed}</p>
+          <Link to={`/animals/${this.props.animal.id}`}>
+            <button>Details</button>
+          </Link>
+
           <button
             type="button"
             onClick={() => this.props.deleteAnimal(this.props.animal.id)}
