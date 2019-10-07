@@ -30,5 +30,10 @@ export default {
     return fetch(`http://localhost:5002/owners/${id}`, {
       method: "DELETE"
     }).then(result => result.json());
+  },
+  removeLocation(id) {
+    return fetch(`http://localhost:5002/locations/${id}`, {
+      method: "DELETE"
+    }).then(result => result.json());
   }
 };

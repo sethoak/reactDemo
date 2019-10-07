@@ -25,11 +25,25 @@ class LocationList extends Component {
     return (
       <div className="container-cards">
         {this.state.locations.map(location => (
-          <LocationCard key={location.id} local={location} />
+          <LocationCard
+            key={location.id}
+            location={location}
+            deleteLocation={this.deleteLocation}
+          />
         ))}
       </div>
     );
   }
+
+  deleteLocation = id => {
+    AnimalManager.removeLocation(id).then(() => {
+      AnimalManager.getAllLocation().then(newLocations => {
+        this.setState({
+          locations: newLocations
+        });
+      });
+    });
+  };
 }
 
 export default LocationList;
