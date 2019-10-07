@@ -15,5 +15,25 @@ export default {
   },
   getAllOwner() {
     return fetch(`${remoteURL}/owners`).then(result => result.json());
+  },
+  delete(id) {
+    return fetch(`http://localhost:5002/animals/${id}`, {
+      method: "DELETE"
+    }).then(result => result.json());
+  },
+  dischargeEmployees(id) {
+    return fetch(`http://localhost:5002/employees/${id}`, {
+      method: "DELETE"
+    }).then(result => result.json());
+  },
+  removeOwner(id) {
+    return fetch(`http://localhost:5002/owners/${id}`, {
+      method: "DELETE"
+    }).then(result => result.json());
+  },
+  removeLocation(id) {
+    return fetch(`http://localhost:5002/locations/${id}`, {
+      method: "DELETE"
+    }).then(result => result.json());
   }
 };

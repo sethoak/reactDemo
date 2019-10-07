@@ -25,11 +25,25 @@ class EmployeeList extends Component {
     return (
       <div className="container-cards">
         {this.state.employees.map(employee => (
-          <EmployeeCard key={employee.id} employee={employee} />
+          <EmployeeCard
+            key={employee.id}
+            employee={employee}
+            dischargeEmployee={this.dischargeEmployee}
+          />
         ))}
       </div>
     );
   }
+
+  dischargeEmployee = id => {
+    AnimalManager.dischargeEmployees(id).then(() => {
+      AnimalManager.getAllEmployee().then(newEmployees => {
+        this.setState({
+          employees: newEmployees
+        });
+      });
+    });
+  };
 }
 
 export default EmployeeList;

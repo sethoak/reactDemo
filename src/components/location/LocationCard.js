@@ -7,9 +7,17 @@ class LocationCard extends Component {
         <div className="card-content">
           <h2>
             Name:{" "}
-            <span className="card-locationname">{this.props.local.name}</span>
+            <span className="card-locationname">
+              {this.props.location.name}
+            </span>
           </h2>
         </div>
+        <button
+          type="button"
+          onClick={() => this.props.deleteLocation(this.props.location.id)}
+        >
+          Remove Location
+        </button>
       </div>
     );
   }
