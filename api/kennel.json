@@ -23,20 +23,19 @@
   ],
   "locations": [
     {
-      "id": 1,
-      "name": "Brentwood"
-    },
-    {
       "id": 2,
-      "name": "Nashville"
+      "name": "Nashville",
+      "phone": "615-555-5555"
     },
     {
       "id": 3,
-      "name": "Bellevue"
+      "name": "Bellevue",
+      "phone": "615-555-5555"
     },
     {
       "id": 4,
-      "name": "Knoxville"
+      "name": "Knoxville",
+      "phone": "615-555-5555"
     }
   ],
   "employees": [
