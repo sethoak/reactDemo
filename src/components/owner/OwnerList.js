@@ -20,16 +20,30 @@ class OwnerList extends Component {
   }
 
   render() {
-    console.log("Owner: Render");
+    console.log("OwnerList: Render");
 
     return (
       <div className="container-cards">
         {this.state.owners.map(owner => (
-          <OwnerCard key={owner.id} owner={owner} />
+          <OwnerCard
+            key={owner.id}
+            owner={owner}
+            deleteOwner={this.deleteOwner}
+          />
         ))}
       </div>
     );
   }
+
+  deleteOwner = id => {
+    AnimalManager.removeOwner(id).then(() => {
+      AnimalManager.getAllOwner().then(newOwners => {
+        this.setState({
+          owners: newOwners
+        });
+      });
+    });
+  };
 }
 
 export default OwnerList;
